@@ -1,3 +1,5 @@
+
+document.getElementById("lewo").addEventListener("click", move);
 function move() {
     var elem = document.getElementById("pasek");
 
@@ -12,6 +14,8 @@ function move() {
     }
 }
 
+
+document.getElementById("prawo").addEventListener("click", move1);
 function move1() {
     var elem = document.getElementById("pasek");
 
