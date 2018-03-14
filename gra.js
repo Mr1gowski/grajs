@@ -1,20 +1,27 @@
 
-
 var id1;
 var id2;
+var id3;
 var width = 450;
 var width2 = 450;
+var position=42;
+var top1=90;
 
 
 document.getElementById("lewo").addEventListener("mouseover", turnleft);
 document.getElementById("lewo").addEventListener("mouseout", stop);
+document.getElementById("prawo").addEventListener("mouseover", turnright);
+document.getElementById("prawo").addEventListener("mouseout", stop);
 
 
-function turnleft() {
+
+function turnright() {
     var elem = document.getElementById("pasek");
-
-    var id = setInterval(frame, 20);
+	
+	
+     id1 = setInterval(frame, 20);
     function frame() {
+		console.log('dzialawlewo');
         if (position >= 85) {
             clearInterval(id1);
         } else {
@@ -25,23 +32,48 @@ function turnleft() {
 }
 
 
-document.getElementById("prawo").addEventListener("mouseover", turnright);
-document.getElementById("prawo").addEventListener("mouseout", stop);
 
-
-function turnright() {
+function turnleft() {
     var elem = document.getElementById("pasek");
-
-    var id2 = setInterval(frame, 20);
+	
+    id2 = setInterval(frame, 20);
     function frame() {
-        if (width >= 0) {
+		
+        if (position <= 0) {
             clearInterval(id2);
         } else {
-            width--;
-            elem.style.right = width+ '%';
+            position--;console.log('dzialawprawo');
+            elem.style.left = position + '%';
         }
     }
 }
+
+
+
+function kulka() {
+    var elem = document.getElementById("kulka");
+	
+    id3 = setInterval(frame, 20);
+    function frame() {
+		
+        if (top1 <= 2) {
+            clearInterval(id3);
+        } else {
+            top1--;
+			console.log('dziala');
+            elem.style.top = top1 + '%';
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 
